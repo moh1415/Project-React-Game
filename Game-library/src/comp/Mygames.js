@@ -87,7 +87,7 @@ export default class Mygames extends React.Component{
 
                     {myGameslist}
                 </ul>
-
+                
             </div>
 
 

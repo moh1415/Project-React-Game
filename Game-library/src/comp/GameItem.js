@@ -12,7 +12,7 @@ export default class GameItem extends React.Component{
         return (
             <li className={"float"} >
                     {/* <button onClick={this.props.list} className="btn btn-danger">Select me</button> */}
-                   
+                
                 <div className={"listgame "}>
                     <h5>{this.props.game.name} <i onClick={this.props.list} class="material-icons big">add</i></h5>
                     <img className=""

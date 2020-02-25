@@ -153,7 +153,8 @@ render() {
           <div className={"App"}>
               <NavBar></NavBar>
               {/*<button onClick={this.getlistgame}>test</button>*/}
-              <Route exact path="/" component={Home} />
+              {/*<Route exact path="/" component={(props) => <Home {...props} games={this.state.Games} />} />*/}
+              <Route exact path="/" component={(props) => <Home {...props} games={this.state.Games} />} />
 
               <Route path="/List" component={(props) => <Listofgame {...props} games={this.state.Games} add={this.Addgametomylist}  />} />
 

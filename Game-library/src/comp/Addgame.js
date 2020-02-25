@@ -1,5 +1,5 @@
 import React from "react";
-
+import {Link} from "react-router-dom";
 
 export default class Addgame extends React.Component{
     constructor(props) {
@@ -58,6 +58,7 @@ export default class Addgame extends React.Component{
                         </div>
 
                     </form>
+                    <Link className="btn btn-secondary gamebtn" to="/mygames">Back</Link>
                 </div>
 
 

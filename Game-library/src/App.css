@@ -6,6 +6,9 @@
   color: red;
   cursor: pointer;
 }
+.head{
+  color: white;
+}
 /*.App-logo {*/
 /*  height: 40vmin;*/
 /*  pointer-events: none;*/
