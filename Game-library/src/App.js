@@ -10,6 +10,8 @@ import Home from "./Home";
 import axios from 'axios';
 import Editgame from "./comp/Editgame";
 import Addgame from "./comp/Addgame";
+
+import icons from 'glyphicons'
 import {
     BrowserRouter as Router,
     Route,
@@ -95,26 +97,6 @@ class App extends React.Component{
         this.setState({ Mylistgame:[] });
     }
 
-
-
-    // ontextchange = (e) =>
-    // {
-    //     console.log("hello",e.target.value);
-    //     this.setState({
-    //         newItem:e.target.value
-    //     })
-    // }
-    //
-    //
-    // addItem = (e) =>
-    // {
-    //     e.preventDefault();
-    //     console.log("work");
-    //     this.setState({
-    //         Mylistgame:[...this.state.Mylistgame,this.state.newItem],
-    //         newItem:""
-    //     })
-    // }
     ontextchangeforedit = (e) =>
     {
         console.log("hello",e.target.value);
@@ -124,31 +106,43 @@ class App extends React.Component{
         })
     }
 
-    saveEdit =(game) => {
+    saveEdit =(game,id) => {
             console.log("save edit",game)
-
             // change a game name
+            const array = id;
+            console.log("arrat",array.id);
+                const findgameindex = this.state.Mylistgame.indexOf(array);
+                // const findgameindex = this.state.Mylistgame.indexOf({id:id.id});
+                // console.log("save ",game,"ID",id.id);
+                console.log("index ",findgameindex);
+            const game1 = {
+                ...this.state.Mylistgame[findgameindex]
+            };
+            console.log(game1)
+            game1.name = game;
+             const games = [...this.state.Mylistgame];
+             games[findgameindex] = game1;
+            this.setState({
+                Mylistgame:games,
+            })
     }
 
+    deleteSelectedGame = (game) => {
+        const Mylistgame = [...this.state.Mylistgame];
+        const filmIndex = Mylistgame.indexOf(game);
+
+        if (filmIndex !== -1) {
+             Mylistgame.splice(filmIndex, 1);
+            // console.log(`Removing ${game.name} From Favors`);
+        } else {
+
+        }
+        this.setState({ Mylistgame });
+    }
 
 
     
 
-editGame = () => {
-    console.log("hello");
-//     const findgameindex = this.state.Mylistgame.findIndex(game => {
-//         return game.id === id;
-//     });
-//     const game = {
-//         ...this.state.Mylistgame[findgameindex]
-//     };
-//     game.name = e.target.value;
-//     const games = [...this.state.Mylistgame];
-//     games[findgameindex] = game;
-//     this.setState({
-//         Mylistgame:games,
-//     })
-}
 
 
 render() {
@@ -163,7 +157,7 @@ render() {
 
               <Route path="/List" component={(props) => <Listofgame {...props} games={this.state.Games} add={this.Addgametomylist}  />} />
 
-              <Route path="/mygames" component={(props) => <Mygames {...props} ourgame={this.state.Mylistgame} delete={this.deleteGame} edit={this.editGame} Addowngame={this.Addowngame} deleteAllGame={this.deleteAllGame} />} />
+              <Route path="/mygames" component={(props) => <Mygames {...props} ourgame={this.state.Mylistgame} delete={this.deleteGame} edit={this.editGame} Addowngame={this.Addowngame} deleteAllGame={this.deleteAllGame} deleteSelectedGame={this.deleteSelectedGame} />} />
 
               <Route path="/edit" component={(props) => <Editgame {...props} games={this.state.Mylistgame} edit={this.saveEdit} gamename={this.props.gamename} editTheValue={this.ontextchangeforedit}  />} />
 

@@ -1,12 +1,12 @@
 import React from "react"
-
+import {Link} from "react-router-dom";
 export default class Editgame extends React.Component {
     constructor(props) {
         super(props);
         this.state ={newGameName:''}
     }
     render() {
-        console.log('STATE:',this.state)
+        // console.log('STATE:',this.state)
         return (
             <div >
             
@@ -25,13 +25,15 @@ export default class Editgame extends React.Component {
 
                         <hr/>
                         <div className="form-group">
-                            <button onClick={(e)=>{
+                            <button onClick={(e,id)=>{
                                 e.preventDefault()
-                                this.props.edit(this.state.newGameName)
+                                this.props.edit(this.state.newGameName,this.props.location.state.id)
                                 }} type="submit"  className="btn btn-primary">Submit</button>
+                                
                         </div>
-
+                        <Link className="btn btn-secondary gamebtn" to="/mygames">Back</Link>
                 </form>
+                
                     </div>
 
 

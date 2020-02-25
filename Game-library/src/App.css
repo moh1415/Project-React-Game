@@ -1,7 +1,11 @@
 .App {
   text-align: center;
 }
-
+.big{
+  font-size:25px;
+  color: red;
+  cursor: pointer;
+}
 /*.App-logo {*/
 /*  height: 40vmin;*/
 /*  pointer-events: none;*/
