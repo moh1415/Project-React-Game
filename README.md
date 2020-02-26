@@ -19,8 +19,9 @@ Basic website for manging your favorite games and keep a record of all your game
 
 
 ### Wireframes image
-![GitHub Logo](/images/20200204_140956.jpg)
-
+![GitHub Logo](wireframe.png)
+### Demo 
+![GitHub Logo](demo.png)
 ### User Stories
 * As a user, I should be able to a list of games in the site
 * As a user, I should be able to add a select game to add to my games list.
