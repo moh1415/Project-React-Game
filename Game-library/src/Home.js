@@ -4,8 +4,6 @@ import Slider from 'react-animated-slider';
 import 'react-animated-slider/build/horizontal.css';
 import horizontalCss from 'react-animated-slider/build/horizontal.css';
 
-import NavBar from "./comp/Nav";
-import Footer from "./comp/Footer";
 
 class Home extends React.Component {
     constructor(props) {
@@ -14,7 +12,6 @@ class Home extends React.Component {
     }
 
     render() {
-        // const content =[{image:"http://www.stleos.uq.edu.au/wp-content/uploads/2016/08/image-placeholder.png",title:"games"}]
             return (
                 <div>
                     <div className="jumbotron jumbotron-fluid">
