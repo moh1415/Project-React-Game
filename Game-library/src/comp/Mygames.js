@@ -28,9 +28,9 @@ export default class Mygames extends React.Component{
             // to get all game list
         const myGameslist = this.props.ourgame.map((game, index) => {
             return (
-                <div>
+                <div key={index}>
                     
-                <GameItem list={()=>this.listOfDeleted(game)} delete={this.props.delete} key={index} game={game}></GameItem>
+                <GameItem  list={()=>this.listOfDeleted(game)} delete={this.props.delete} key={index} game={game}></GameItem>
                 </div>
             );
         });
@@ -39,9 +39,9 @@ export default class Mygames extends React.Component{
         const deletedlist = this.state.list.map((game, index) => {
             
             return (
-                <div>
+                <div key={index}>
                 <li key={index} className="lead">{game.name}</li>
-                <button onClick={()=>this.props.deleteSelectedGame(game)} className="btn btn-outline-dark">Clear</button>
+                {/* <button onClick={()=>this.props.deleteSelectedGame(game)} className="btn btn-outline-dark">Clear</button> */}
                 </div>
             );
         });
@@ -59,7 +59,7 @@ export default class Mygames extends React.Component{
                         
                     <p className="lead">You select : <ul>
                        {deletedlist}
-                       {/* <button onClick={()=>this.props.deleteSelectedGame(test) } class="btn btn-outline-dark">Clear</button> */}
+                       <button onClick={()=>this.props.deleteSelectedGame(this.state.list) } className="btn btn-outline-dark">Clear</button>
                    </ul></p>
                 
                    </div>
