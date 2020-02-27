@@ -8,6 +8,7 @@ import {
 export default class Listofgame extends React.Component{
 
 render() {
+    // get all game list from the api and render it
     const allGames = this.props.games.map((game, index) => {
         return (
             <li className={"float"} key={index}>
@@ -36,14 +37,7 @@ render() {
     </div>
     <ul>
         {allGames}
-        {/*<li className={"float"}>*/}
-        {/*    <div className={"listgame"}>*/}
-        {/*    <h4>GTA</h4>*/}
-        {/*    <img class="img-thumbnail" src={"https://media.rawg.io/media/games/b11/b115b2bc6a5957a917bc7601f4abdda2.jpg"}/>*/}
-        {/*    <h6>released </h6>*/}
-        {/*    <button className={"btn btn-outline-primary"}>Add</button>*/}
-        {/*    </div>*/}
-        {/*</li>*/}
+     
     </ul>
 </div>
 

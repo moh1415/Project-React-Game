@@ -1,7 +1,7 @@
 import React from "react";
-import Editgame from "./Editgame";
 import {Link} from "react-router-dom";
 import GameItem from "./GameItem";
+//set state with empty list to hold selected game for delete
 export default class Mygames extends React.Component{
     constructor(props) {
         super(props);
@@ -10,6 +10,7 @@ export default class Mygames extends React.Component{
         }
     }
 
+    // to push selected game that will be deleted to our list by set the state for the list
     listOfDeleted = (game) => {
         const list = [...this.state.list];
         const filmIndex = list.indexOf(game);
@@ -41,14 +42,14 @@ export default class Mygames extends React.Component{
             return (
                 <div key={index}>
                 <li key={index} className="lead">{game.name}</li>
-                {/* <button onClick={()=>this.props.deleteSelectedGame(game)} className="btn btn-outline-dark">Clear</button> */}
                 </div>
             );
         });
-        // console.log(this.state)
+     
+        // functon to check if the state is not empty then render the last of marked game in same page
         const gameofselect = ()=> {
             let item1 = "";
-        //    let test = this.state.list.map((game, index) => {return {game}} );
+       
             if(this.state.list=="")
             {
                 console.log("work");
@@ -79,7 +80,6 @@ export default class Mygames extends React.Component{
                             {gameofselect()}
                             
                         <Link to="/add" className="btn btn-primary">Add Game</Link>{" "}
-                        {/*<button onClick={()=>this.props.Addowngame({name:"ada"})} className="btn btn-primary">Add Game</button>{" "}*/}
                         <button onClick={()=>this.props.deleteAllGame()} className="btn btn-danger">Delete All Games</button>
                     </div>
                 </div>

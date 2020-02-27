@@ -6,7 +6,7 @@ export default class Editgame extends React.Component {
         this.state ={newGameName:''}
     }
     render() {
-        // console.log('STATE:',this.state)
+       
         return (
             <div >
             

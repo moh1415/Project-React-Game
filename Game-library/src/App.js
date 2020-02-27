@@ -1,22 +1,19 @@
 import React from 'react';
 import './App.css';
-import {Alert, Container} from "react-bootstrap";
 import NavBar from "./comp/Nav";
 import Footer from "./comp/Footer";
-import SliderImage from "./comp/SliderImage";
 import Listofgame from "./comp/Listofgame";
 import Mygames from "./comp/Mygames";
 import Home from "./Home";
 import axios from 'axios';
 import Editgame from "./comp/Editgame";
 import Addgame from "./comp/Addgame";
-
-import icons from 'glyphicons'
 import {
     BrowserRouter as Router,
     Route,
     Link
 } from 'react-router-dom';
+//set stats for data
 class App extends React.Component{
   constructor(props) {
     super(props);
@@ -61,6 +58,7 @@ class App extends React.Component{
 
     }
 
+    // add game that not from the list
     Addowngame = (game) => {
         const Mylistgame_2 = [...this.state.Mylistgame];
         console.log(Mylistgame_2);
@@ -84,36 +82,29 @@ class App extends React.Component{
 
             if (filmIndex !== -1) {
                  Mylistgame.splice(filmIndex, 1);
-                console.log(`Removing ${game.name} From Favors`);
+                
             } else {
 
             }
             this.setState({ Mylistgame });
         }
 
-    //Deleted all  my games list
+    //Deleted all in my games list
     deleteAllGame = () => {
 
         this.setState({ Mylistgame:[] });
     }
 
-    ontextchangeforedit = (e) =>
-    {
-        console.log("hello",e.target.value);
-        this.setState({
-            newItem:e.target.value,
+  
 
-        })
-    }
-
+    // update my list game with new data
     saveEdit =(game,id) => {
             console.log("save edit",game)
             // change a game name
             const array = id;
             console.log("arrat",array.id);
                 const findgameindex = this.state.Mylistgame.indexOf(array);
-                // const findgameindex = this.state.Mylistgame.indexOf({id:id.id});
-                // console.log("save ",game,"ID",id.id);
+              
                 console.log("index ",findgameindex);
             const game1 = {
                 ...this.state.Mylistgame[findgameindex]
@@ -127,6 +118,7 @@ class App extends React.Component{
             })
     }
 
+    // to deleted only marked game
     deleteSelectedGame = (game) => {
             const MylistgameDelete = [...this.state.Mylistgame];
             const newGameArr = MylistgameDelete.filter(savedGame => game.indexOf(savedGame)==-1)
@@ -143,13 +135,12 @@ class App extends React.Component{
 
 
 render() {
-// console.log(this.state.Games);
-    console.log(this.state.Mylistgame);
+
   return (
+      // router to go to different pages
       <Router>
           <div className={"App"}>
               <NavBar></NavBar>
-              {/*<button onClick={this.getlistgame}>test</button>*/}
               {/*<Route exact path="/" component={(props) => <Home {...props} games={this.state.Games} />} />*/}
               <Route exact path="/" component={(props) => <Home {...props} games={this.state.Games} />} />
 
