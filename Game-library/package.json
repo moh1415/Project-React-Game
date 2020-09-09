@@ -41,7 +41,7 @@
       "last 1 safari version"
     ]
   },
-  "homepage":  "http://moh1415.github.io/Project-React-Game",
+  "homepage": "http://moh1415.github.io/Project-React-Game",
   "devDependencies": {
     "gh-pages": "^2.2.0",
     "reactstrap": "^8.4.1"

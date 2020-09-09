@@ -12,7 +12,8 @@ class Home extends React.Component {
     }
 
     render() {
-            return (
+
+        return (
                 <div>
                     <div className="jumbotron jumbotron-fluid">
                         <div className="container">
@@ -22,17 +23,7 @@ class Home extends React.Component {
                         <div className="container ">
                             <Slider classNames={horizontalCss} autoplay={1000}>
                                 {this.props.games.map((item, index) => (
-                                    <div
-                                        key={index}
-                                        style={{ background: `url('${item.background_image}') no-repeat center center` }}
-                                    >
-
-                                        <div className="center">
-                                            <h1 className="head">{item.name}</h1>
-                                            {/*<p>Want dicover </p>*/}
-                                            {/*<button className="btn btn-primary">click </button>*/}
-                                        </div>
-                                    </div>
+                             <img src={item.background_image} height='1200px' width='400px'/>
                                 ))}
                             </Slider>
 

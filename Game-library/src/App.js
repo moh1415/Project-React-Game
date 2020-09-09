@@ -82,7 +82,7 @@ class App extends React.Component{
 
             if (filmIndex !== -1) {
                  Mylistgame.splice(filmIndex, 1);
-                
+
             } else {
 
             }
@@ -95,7 +95,7 @@ class App extends React.Component{
         this.setState({ Mylistgame:[] });
     }
 
-  
+
 
     // update my list game with new data
     saveEdit =(game,id) => {
@@ -104,7 +104,7 @@ class App extends React.Component{
             const array = id;
             console.log("arrat",array.id);
                 const findgameindex = this.state.Mylistgame.indexOf(array);
-              
+
                 console.log("index ",findgameindex);
             const game1 = {
                 ...this.state.Mylistgame[findgameindex]
@@ -126,11 +126,11 @@ class App extends React.Component{
             console.log(newGameArr, "new game array")
             this.setState({ Mylistgame:newGameArr });
 
-   
+
     }
 
 
-    
+
 
 
 
@@ -142,7 +142,7 @@ render() {
           <div className={"App"}>
               <NavBar></NavBar>
               {/*<Route exact path="/" component={(props) => <Home {...props} games={this.state.Games} />} />*/}
-              <Route exact path="/" component={(props) => <Home {...props} games={this.state.Games} />} />
+              <Route exact path="/Home" component={(props) => <Home {...props} games={this.state.Games} />} />
 
               <Route path="/List" component={(props) => <Listofgame {...props} games={this.state.Games} add={this.Addgametomylist}  />} />
 
@@ -151,7 +151,7 @@ render() {
               <Route path="/edit" component={(props) => <Editgame {...props} games={this.state.Mylistgame} edit={this.saveEdit} gamename={this.props.gamename} editTheValue={this.ontextchangeforedit}  />} />
 
               <Route path="/add" component={(props) => <Addgame {...props} games={this.state.Mylistgame}  gamename={this.props.gamename} Addowngame={this.Addowngame}  />} />
-               
+
                <Footer></Footer>
 
           </div>
