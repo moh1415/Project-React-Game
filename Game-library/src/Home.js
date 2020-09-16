@@ -17,8 +17,8 @@ class Home extends React.Component {
                 <div>
                     <div className="jumbotron jumbotron-fluid">
                         <div className="container">
-                            <h1 className="display-4">Games React</h1>
-                            <p className="lead">This is a game website that help you add your favorite list of games.</p>
+                            <h1 className="display-4">Games Library</h1>
+                            <p className="lead">This is a game website that help you add your favorite list of games from different platforms.</p>
                         </div>
                         <div className="container ">
                             <Slider classNames={horizontalCss} autoplay={1000}>
